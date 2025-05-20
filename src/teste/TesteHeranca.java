@@ -10,6 +10,9 @@ import modelo.Aluno;
 import modelo.AvaliacaoFisica;
 import modelo.Professor;
 import modelo.Plano;
+import modelo.Convenio;
+import modelo.AlunoConvenio;
+
 
 /**
  *
@@ -50,6 +53,10 @@ public class TesteHeranca {
 
        */
         
+        
+        
+        
+       /* 
         ////// Teste:   (14/05/2025)
        
         
@@ -80,6 +87,54 @@ public class TesteHeranca {
        a3.setPlano(p1);
        a3.verificaDesconto();
        System.out.println(a3.exibirDados());
+       
+       */
+       
+      
+
+
+       ///////Teste: (21/05/2025)
+       
+       //Criando um aluno normal: 
+       
+       System.out.println("Aluno normal (Sem convenio) : ");
+      
+       Aluno aluno = new Aluno();
+       aluno.setNome("Marco Polo");
+       aluno.setCpf("278.234.421-50");
+       aluno.setMatricula("20");
+       aluno.setDataMatricula("08/05/2025", formato);
+       
+       Plano plano = new Plano("Básico", "5 dias de treino semanais e um dia de zumba", 100.00);
+       aluno.setPlano(plano);
+       
+       System.out.println(aluno.exibirDados());
+       
+       
+       System.out.println("\nAluno com convenio : ");
+       
+       //Criando o aluno p/ testar:
+       AlunoConvenio alunoC = new AlunoConvenio();
+       alunoC.setNome("Jalin");
+       alunoC.setCpf("298.734.421-56");
+       alunoC.setMatricula("19");
+       alunoC.setDataMatricula("02/04/2025", formato);
+       
+       //Criando e atribuindo um plano:
+       //Plano plano = new Plano("Básico", "5 dias de treino semanais e um dia de zumba", 100.00);
+       alunoC.setPlano(plano);
+       
+       //Criando e atribuindo um convênio: 
+       Convenio convenio = new Convenio("J&J Advocacia", "Parceria entre J&J e GymFit", 10);
+       alunoC.setConvenio(convenio);
+       
+       //Imprimindo os dados:
+       System.out.println(alunoC.exibirDados());
+       
+       
+       
+       
+    
      
         
         

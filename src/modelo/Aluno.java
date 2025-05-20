@@ -45,6 +45,10 @@ import java.time.format.DateTimeFormatter;
         this.valorMensalidade = plano.getValor();
         }
     }
+    public Plano getPlano()
+    {
+        return plano;   
+    }
     public void verificaDesconto()
     {
         Period periodo = Period.between(dataMatricula, LocalDate.now());
@@ -86,7 +90,7 @@ import java.time.format.DateTimeFormatter;
     public String exibirDados() {
         String aux = super.exibirDados();
         aux += "\nMatricula: "+matricula;
-        aux += "\nPlano: " + (plano != null ? plano.getNome() : "Nenhum plano encontrado.");
+        aux += "\nPlano: " + (plano != null ? plano.getNome() + " - R$ " + plano.getValor(): "Nenhum plano encontrado.");
         aux += "\nAvaliações Físicas Realizadas: " 
                 + avaliacoes.size();
         aux += "\nValor da Mensalidade: "

@@ -6,8 +6,6 @@ package modelo;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -42,15 +40,16 @@ public class Pessoa {
         String aux = "\nDados da Pessoa cadastrada: \n";
         aux += "Nome: " + nome ;
         if (CPF != null) {
-            aux += "CPF: " + CPF + "\n";
+            aux += "\nCPF: " + CPF;
         }
         if (dataNascimento != null) {
-            aux += "Data de Nascimento: " + formato.format(dataNascimento);
+            aux += "\nData de Nascimento: " + formato.format(dataNascimento);
         }
         
         return aux;
     }
 
+    
     public String getNome() {
         return nome;
     }
@@ -79,6 +78,9 @@ public class Pessoa {
     public void setDataNascimento(LocalDate dtN) {
         dataNascimento = dtN;
     }
+    
+    
+    
 
     @Override
     public String toString() {
